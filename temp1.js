@@ -33,6 +33,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  celsiustemperature = response.data.main.temp;
 
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
@@ -65,21 +66,43 @@ function getCurrentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+////
 
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  let fahrenheit = (celsiustemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheit);
 }
+
+let fahrenheitlink = document.querySelector("#fahrenheitlink");
+fahrenheitlink.addEventListener("click", convertToFahrenheit);
+
+let celsiustemperature = null;
 
 function convertToCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+  temperatureElement.innerHTML = Math.round(celsiustemperature);
 }
+
+let celsius = document.querySelector("#celcius-link");
+celsius.addEventListener("click", convertToCelsius);
+//function convertToFahrenheit(event) {
+//event.preventDefault();
+//let temperatureElement = document.querySelector("#temperature");
+// temperatureElement.innerHTML = 66;
+//}
+
+//function convertToCelsius(event) {
+//event.preventDefault();
+//let temperatureElement = document.querySelector("#temperature");
+//temperatureElement.innerHTML = 19;
+//}
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+/////
