@@ -29,6 +29,7 @@ dateElement.innerHTML = formatDate(currentTime);
 // tem\\\
 
 function displayWeatherCondition(response) {
+  console.log(response.data);
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
@@ -41,6 +42,13 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main; //cloud or rain...
+
+  let iconElement = document.querySelector("#icon");
+
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function searchCity(city) {
@@ -92,17 +100,6 @@ function convertToCelsius(event) {
 
 let celsius = document.querySelector("#celcius-link");
 celsius.addEventListener("click", convertToCelsius);
-//function convertToFahrenheit(event) {
-//event.preventDefault();
-//let temperatureElement = document.querySelector("#temperature");
-// temperatureElement.innerHTML = 66;
-//}
-
-//function convertToCelsius(event) {
-//event.preventDefault();
-//let temperatureElement = document.querySelector("#temperature");
-//temperatureElement.innerHTML = 19;
-//}
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
