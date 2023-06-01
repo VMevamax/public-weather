@@ -106,3 +106,9 @@ h1:hover {
 .tempterature {
   font-size: 150px;
 }
+.weathercss .activ {
+  cursor: default;
+}
+.weathercss .activ:hover {
+  text-decoration: none;
+}
