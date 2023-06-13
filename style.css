@@ -47,7 +47,18 @@ h1:hover {
 .card-img-top {
   height: 250px;
 }
-
+.str {
+  position: relative;
+  top: 250px;
+  left: -70px;
+  height: 100px;
+}
+.card {
+  height: 300px;
+}
+.card-weather {
+  height: 100px;
+}
 .butt:hover {
   background-color: #4caf50; /* Green */
   color: white;
@@ -56,6 +67,18 @@ h1:hover {
 }
 .clearfix {
   font-size: 50px;
+}
+.cloud {
+  font-size: 80px;
+  color: #82c3e3;
+  display: block;
+  margin: auto;
+}
+.sun {
+  font-size: 80px;
+  color: #e1d96c;
+  display: block;
+  margin: auto;
 }
 .weatherbox {
   margin: 2% auto;
@@ -72,11 +95,10 @@ h1:hover {
     rgb(255, 241, 188) 90%
   );
 }
-.weather-forecast-date {
+.weather-img {
   position: relative;
-  top: -210px;
+  top: -180px;
   right: -165px;
-  font-size: 25px;
 }
 .units {
   font-size: 35px;
