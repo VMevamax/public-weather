@@ -144,6 +144,8 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+// convert F/C
+
 // city seach
 function search(city) {
   let apiKey = "0694dc9ddf30c85dedc282e5ce86e825";
